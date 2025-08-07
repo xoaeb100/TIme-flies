@@ -1,153 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Time With You ❤️</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time With You ❤️</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap");
 
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom right, #ffe6e6, #ffcccc);
-      font-family: 'Open Sans', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .container {
-      text-align: center;
-      padding: 2rem;
-      max-width: 90%;
-      animation: fadeIn 2s ease-in-out;
-      z-index: 2;
-    }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      color: #c94f7c;
-      font-size: 2.5em;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-      animation: glow 2s infinite alternate;
-      border: 2px solid #ff99aa;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    p {
-      color: #5a1e42;
-      font-size: 1.2em;
-      line-height: 1.6em;
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-      animation: pulse 5s infinite ease-in-out;
-    }
-
-    .heart {
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2rem;
-      animation: heartbeat 1.5s infinite;
-      z-index: 2;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes heartbeat {
-      0% { transform: translateX(-50%) scale(1); }
-      25% { transform: translateX(-50%) scale(1.1); }
-      50% { transform: translateX(-50%) scale(1); }
-      75% { transform: translateX(-50%) scale(1.1); }
-      100% { transform: translateX(-50%) scale(1); }
-    }
-
-    @keyframes glow {
-      from {
-        box-shadow: 0 0 5px #ff99aa, 0 0 10px #ff99aa;
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #ffe6e6, #ffcccc);
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
       }
-      to {
-        box-shadow: 0 0 15px #ff6699, 0 0 25px #ff6699;
+
+      .container {
+        text-align: center;
+        padding: 2rem;
+        max-width: 90%;
+        animation: fadeIn 2s ease-in-out;
+        z-index: 2;
       }
-    }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.85; }
-    }
-
-    .falling-hearts {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .falling-hearts span {
-      position: absolute;
-      top: -50px;
-      color: #ff4d6d;
-      font-size: 1.5rem;
-      animation: fall 10s linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 0;
+      h1 {
+        font-family: "Great Vibes", cursive;
+        color: #c94f7c;
+        font-size: 2.5em;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        animation: glow 2s infinite alternate;
+        border: 2px solid #ff99aa;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
       }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="falling-hearts">
-    <!-- Generate 30 hearts -->
-    <script>
-      for (let i = 0; i < 20; i++) {
-        const heart = document.createElement('span');
-        heart.innerText = '🌼';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDelay = (Math.random() * 10) + 's';
-        heart.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
-        document.querySelector('.falling-hearts').appendChild(heart);
-      }
-    </script>
-  </div>
 
-  <div class="container">
-    <h1>My Dear Maryam  💝</h1>
-    <p>
-      Time flies when I’m with you — but every moment feels better than the last.<br />
-      I can't wait for all the seconds, hours, and years ahead by your side. ⌚🫶
-    </p>
-  </div>
+      p {
+        color: #5a1e42;
+        font-size: 1.2em;
+        line-height: 1.6em;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        animation: pulse 5s infinite ease-in-out;
+      }
 
-  <div class="heart">❤️</div>
+      .heart {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        animation: heartbeat 1.5s infinite;
+        z-index: 2;
+      }
 
-  <!-- Optional: romantic instrumental in the background -->
-  <audio autoplay loop muted>
-    <source src="https://cdn.pixabay.com/audio/2022/03/24/audio_c20f6b137c.mp3" type="audio/mpeg">
-  </audio>
-</body>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: translateX(-50%) scale(1);
+        }
+        25% {
+          transform: translateX(-50%) scale(1.1);
+        }
+        50% {
+          transform: translateX(-50%) scale(1);
+        }
+        75% {
+          transform: translateX(-50%) scale(1.1);
+        }
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+      }
+
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #ff99aa, 0 0 10px #ff99aa;
+        }
+        to {
+          box-shadow: 0 0 15px #ff6699, 0 0 25px #ff6699;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.85;
+        }
+      }
+
+      .falling-hearts {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .falling-hearts span {
+        position: absolute;
+        top: -50px;
+        color: #ff4d6d;
+        font-size: 1.5rem;
+        animation: fall 10s linear infinite;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-50px) rotate(0deg);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="falling-hearts">
+      <!-- Generate 30 hearts -->
+      <script>
+        for (let i = 0; i < 20; i++) {
+          const heart = document.createElement("span");
+          heart.innerText = "🌼";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.animationDelay = Math.random() * 10 + "s";
+          heart.style.fontSize = Math.random() * 1.5 + 1 + "rem";
+          document.querySelector(".falling-hearts").appendChild(heart);
+        }
+      </script>
+    </div>
+
+    <div class="container">
+      <h1>My Dear Maryam 💝</h1>
+      <p>
+        Time flies when I’m with you — but every moment feels better than the
+        last.<br />
+        I can't wait for all the seconds, hours, and years ahead by your side.
+        ⌚🫶 <br />
+        <i>--Your Bestfriend 😊</i>
+      </p>
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <!-- Optional: romantic instrumental in the background -->
+    <audio autoplay loop muted>
+      <source
+        src="https://cdn.pixabay.com/audio/2022/03/24/audio_c20f6b137c.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+  </body>
 </html>
