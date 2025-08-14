@@ -1,26 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time With You ❤️</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap");
 
       body {
         margin: 0;
         padding: 0;
-        height: 100vh;
-        background: radial-gradient(
-          circle at top left,
-          #ffe5ec,
-          #ffc2d1,
-          #ffb3c6
-        );
-        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom right, #ffe6e6, #ffcccc);
+        font-family: "Open Sans", sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
+        height: 100vh;
         overflow: hidden;
         position: relative;
       }
@@ -28,34 +23,30 @@
       .container {
         text-align: center;
         padding: 2rem;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 20px;
-        backdrop-filter: blur(15px);
-        box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
-        animation: fadeIn 2s ease-in-out;
         max-width: 90%;
+        animation: fadeIn 2s ease-in-out;
         z-index: 2;
       }
 
       h1 {
-        font-family: 'Great Vibes', cursive;
-        font-size: 3em;
-        color: #ff4d6d;
+        font-family: "Great Vibes", cursive;
+        color: #c94f7c;
+        font-size: 2.5em;
         margin-bottom: 1rem;
-        text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         animation: glow 2s infinite alternate;
+        border: 2px solid #ff99aa;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
       }
 
       p {
-        font-size: 1.1em;
         color: #5a1e42;
+        font-size: 1.2em;
         line-height: 1.6em;
-      }
-
-      .signature {
-        font-style: italic;
-        margin-top: 1rem;
-        color: #ff4d6d;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        animation: pulse 5s infinite ease-in-out;
       }
 
       .heart {
@@ -66,13 +57,6 @@
         font-size: 2rem;
         animation: heartbeat 1.5s infinite;
         z-index: 2;
-      }
-
-      .falling-hearts span {
-        position: absolute;
-        top: -50px;
-        color: #ff4d6d;
-        animation: fall 8s linear infinite;
       }
 
       @keyframes fadeIn {
@@ -86,29 +70,60 @@
         }
       }
 
-      @keyframes glow {
-        from {
-          text-shadow:
-            0 0 5px #ff99aa,
-            0 0 10px #ff99aa;
-        }
-        to {
-          text-shadow:
-            0 0 20px #ff4d6d,
-            0 0 30px #ff4d6d;
-        }
-      }
-
       @keyframes heartbeat {
-        0%,
-        50%,
+        0% {
+          transform: translateX(-50%) scale(1);
+        }
+        25% {
+          transform: translateX(-50%) scale(1.1);
+        }
+        50% {
+          transform: translateX(-50%) scale(1);
+        }
+        75% {
+          transform: translateX(-50%) scale(1.1);
+        }
         100% {
           transform: translateX(-50%) scale(1);
         }
-        25%,
-        75% {
-          transform: translateX(-50%) scale(1.2);
+      }
+
+      @keyframes glow {
+        from {
+          box-shadow: 0 0 5px #ff99aa, 0 0 10px #ff99aa;
         }
+        to {
+          box-shadow: 0 0 15px #ff6699, 0 0 25px #ff6699;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.85;
+        }
+      }
+
+      .falling-hearts {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .falling-hearts span {
+        position: absolute;
+        top: -50px;
+        color: #ff4d6d;
+        font-size: 1.5rem;
+        animation: fall 10s linear infinite;
       }
 
       @keyframes fall {
@@ -116,7 +131,7 @@
           transform: translateY(-50px) rotate(0deg);
           opacity: 0;
         }
-        20% {
+        50% {
           opacity: 1;
         }
         100% {
@@ -127,48 +142,39 @@
     </style>
   </head>
   <body>
-    <div class="falling-hearts" id="hearts"></div>
+    <div class="falling-hearts">
+      <!-- Generate 30 hearts -->
+      <script>
+        for (let i = 0; i < 20; i++) {
+          const heart = document.createElement("span");
+          heart.innerText = "🌼";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.animationDelay = Math.random() * 10 + "s";
+          heart.style.fontSize = Math.random() * 1.5 + 1 + "rem";
+          document.querySelector(".falling-hearts").appendChild(heart);
+        }
+      </script>
+    </div>
 
     <div class="container">
       <h1>My Dear Maryam 💝</h1>
       <p>
         Time flies when I’m with you — but every moment feels better than the
         last.<br />
-        I can't wait to share every second, minute, hour, and years by your
-        side. ⌚🫶
+        I can't wait for all the seconds, minutes, hours, and years ahead by
+        your side. ⌚🫶 <br />
+        <i>--Your Bestfriend 😊</i>
       </p>
-      <div class="signature">— Your Bestfriend 😊</div>
     </div>
 
-    <div class="heart">💖</div>
+    <div class="heart">❤️</div>
 
-    <script>
-      const heartEmojis = [
-        '🌸', // cherry blossom
-        '🌹', // rose
-        '🌺', // hibiscus
-        '🌻', // sunflower
-        '🌼', // blossom
-        '🌷', // tulip
-        '💐', // bouquet
-        '🪷', // lotus
-        '🪻', // hyacinth
-        '🌿', // herb (greenery look)
-        '🍀', // clover
-        '🍃', // leaves
-        '🍂', // fallen leaves
-        '🍁', // maple leaf
-      ];
-
-      for (let i = 0; i < 25; i++) {
-        const heart = document.createElement('span');
-        heart.innerText =
-          heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.fontSize = Math.random() * 1.5 + 1 + 'rem';
-        heart.style.animationDelay = Math.random() * 5 + 's';
-        document.getElementById('hearts').appendChild(heart);
-      }
-    </script>
+    <!-- Optional: romantic instrumental in the background -->
+    <audio autoplay loop muted>
+      <source
+        src="https://cdn.pixabay.com/audio/2022/03/24/audio_c20f6b137c.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
   </body>
 </html>
